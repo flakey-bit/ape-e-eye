@@ -1,0 +1,67 @@
+.swEditSearchWidgetBasicDetails {
+  padding: 10px;
+}
+
+.swEditSearchWidgetBasicDetails p:first-child {
+  margin-top: 0px;
+}
+
+.swEditSearchWidgetBasicDetails p + p {
+  margin-top: 15px;
+}
+
+.swEditSearchWidgetBasicDetails label {
+    display: block;
+}
+
+.swEditSearchWidgetBasicDetails input:not([type="checkbox"]),
+.swEditSearchWidgetBasicDetails textarea,
+.swEditSearchWidgetBasicDetails button {
+    display: block;
+    width: 100%;
+}
+
+.swESWCodeMirror .CodeMirror {
+  width: 700px;
+  height: 300px;
+}
+
+.swEditSearchWidgetBasicDetails input:disabled {
+  cursor: default;
+}
+
+.swEditSearchWidgetBasicDetails input[type=checkbox] {
+    display: none;
+}
+
+.swEditSearchWidgetBasicDetails input[type=checkbox] + label {
+    display: inline-block;
+    padding: 0 24px 0 0;
+    line-height: 24px;
+    background-image: url('~static-content/checkbox-sprite.png');
+    background-position: right;
+    background-position-y: 48px;
+    user-select: none;
+    background-repeat: repeat-y;
+}
+
+.swEditSearchWidgetBasicDetails input[type=checkbox]:checked + label {
+    background-position-y: 24px;
+}
+
+label.swEditSearchWidgetOptional {
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+label.swEditSearchWidgetOptionalVisible {
+  opacity: 1;
+}
+
+.swEditSearchWidgetDialogButtons {
+  float: right;
+}
+
+.swEditSearchWidget input.ng-invalid.ng-dirty, .swESWCodeMirror.ng-invalid.ng-dirty .CodeMirror {
+    background-color: lightpink;
+}

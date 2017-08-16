@@ -1,0 +1,21 @@
+h2.swSearchGroupWidgetHeading {
+  text-align: center;
+  color: #444;
+  font-style: italic;
+}
+
+.swSearchGroupWidget label {
+  font-weight: bold;
+}
+
+.swSearchGroupWidget input.ng-invalid.ng-dirty {
+    background-color: lightpink;
+}
+
+.swSearchGroupWidget {
+    padding: 10px;
+    border-radius: 10px;
+    display:inline-block;
+    background-color: #FFF;
+    box-shadow: rgba(100,100,100,0.8) 3px 3px 10px;
+}

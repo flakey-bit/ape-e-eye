@@ -1,0 +1,9 @@
+<div class='swSearchWidget' title="{{'Lasted updated: ' + $ctrl.search.LastUpdated.format('MMMM Do YYYY, h:mm:ss a');}}">
+    <div class="swSearchWidgetHeading">{{$ctrl.search.Definition.friendlyName}}
+        <div class="swSearchWidgetButtons">
+            <a href="" ng-click="$ctrl.editClick()"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a href="" ng-click="$ctrl.deleteClick()"><i class="fa fa-trash" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="swCSSSearchValue">{{$ctrl.search.LastResult}}</div>
+</div>

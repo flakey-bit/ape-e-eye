@@ -1,0 +1,5 @@
+<ul class='swSearchGroupsList'>
+    <li ng-repeat="searchGroup in $ctrl.searchGroups" class='swSearchGroupLi'>
+        <search-group-widget search-group="searchGroup" search-group-updated-callback="$ctrl.onSearchGroupUpdated" />
+    </li>
+</ul>

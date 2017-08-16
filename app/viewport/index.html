@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ape-e-eye</title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <style>
+h1.swHeading {
+    display: inline;
+    font-family: Impact, sans-serif;
+    font-style: italic;
+    font-size: 4em;
+    margin-left: 20px;
+    color: #D8B78B;
+    text-shadow: 0px 0px 3px #AA8039;
+}
+
+body {
+    background-color: #051A38;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    padding-left: 10px;
+}
+
+#rootNavigation {
+    margin-left:20px;
+    margin-bottom: -25px;
+    float: right;
+    clear: both;
+    margin-right: 30px;
+}
+
+.mainViewport {
+    background-color: #FFE0AA;
+    margin: 0px 30px 30px 20px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+
+img#logo {
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+
+.banner {
+    float: right;
+    font-size: 32px;
+    margin-right: 30px;
+}
+
+body, h4, h1 {
+    color: #AA8039;
+}
+
+a:link, a:visited {
+    color: #4C668C;
+}
+
+a:hover, a:active {
+    color: #758AA8;
+}
+        </style>
+    </head>
+<body ng-app="app">
+<modaldialogwidget>
+</modaldialogwidget>
+
+    <h1 class="swHeading">Ape <img src="~static-content/surprised-ape.png" alt="Search Watcher Logo" id="logo" width="65" height="65"/> eye</h1>
+    <div style="float: right;">
+        <div class="banner">
+            <a href="https://www.facebook.com/Ape-E-Eye-1554595177895050/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="http://github.com/flakey-bit/ape-e-eye" target="_blank">
+                <i class="fa fa-github-square" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div id="rootNavigation">
+            <standard-button href="{path: 'currentSearches'}">Searches <i class="fa fa-search" aria-hidden="true"></i></standard-button>
+            <standard-button href="{path: 'searchGroups'}" type="submit">Manage Groups <i class="fa fa-cogs" aria-hidden="true"></i></standard-button>
+        </div>
+    </div>
+    <div ng-view class="mainViewport"></div>
+</body>
+</html>

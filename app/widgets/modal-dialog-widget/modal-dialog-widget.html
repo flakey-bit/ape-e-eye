@@ -1,0 +1,8 @@
+<div>
+        <div class="swModalDialogWidget">
+            <div class="swModalDialogWidgetHeader">{{$ctrl.dialogDetails.title}}
+                <a href="" class="swModalDialogWidgetCloseButton" ng-click="$ctrl.onCloseClick()"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <div ng-transclude="dialogContent" class="swModalDialogWidgetContent" />
+        </div>
+</div>

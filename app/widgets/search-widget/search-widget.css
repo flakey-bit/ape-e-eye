@@ -1,0 +1,52 @@
+.swSearchWidgetButtons {
+    float:right;
+    margin-left: 20px;
+}
+
+.swSearchWidgetButtons a {
+    text-decoration: none;
+}
+
+.swSearchWidgetButtons a:hover {
+  text-shadow: 0px 0px 5px #bbff99;
+}
+
+.swSearchWidgetHeading {
+    margin-top: 0px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.swSearchWidget {
+    padding: 10px;
+    border-radius: 10px;
+    display:inline-block;
+    background-color: #FFF;
+    box-shadow: rgba(100,100,100,0.8) 3px 3px 10px;
+}
+
+.swSearchWidgetUpdated {
+  animation: swSearchWidgetUpdated;
+  animation-duration: 2s;
+  animation-play-state: running;
+  animation-iteration-count: 1;
+}
+
+@keyframes swSearchWidgetUpdated {
+  0% {
+    color: inherit;
+    transform: scale(1);
+  }
+
+  33% {
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  100% {
+    color: inherit;
+    transform: scale(1);
+  }
+}

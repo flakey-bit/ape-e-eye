@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- node
+cache:
+  directories:
+  - node_modules
+install:
+  npm run build
+before_deploy:
+  - cp content/favicon.ico ape-e-eye/
+  - cp content/package.json.template ape-e-eye/package.json
+  - cd ape-e-eye
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  api_key:
+    secure: aMJ0aDGGQB6T0B1OTfIka4wHYMXxTsRZ92NCq5/cBHrldadXPi1vQ2yToYpguUoevq36nNlB0SuwkLWN9YjjD8Pu0SwObM9LCVSnQjcEzp+plBiLtoNym0Xvhdn5e9SChjqaVuGu63E6USNlRcPHTQSRxOu9kk8X9YPwsF4aUai499fHudIkiFeygW0IZiDF0pCR76x1DdP0kTSz4OUncnbvHGTS9XZao+8RGOb9YbG5HLLvoruj2htP+7oZipL08xI4rPQqCU5Yv7EBe9/LXPr71r9XI2X+Gf2fLvHyju80Tq+u3/AFIfa2BegsKrc7o3vmKdTyXLjp/V9HHzVNeadK/o1PvLOhm0KvMHsSGkMSnabZgTYAOtLYbbSjx2j/njMqVp0G9yooWsHjdNeA9CIcBTHbUZ7bu9WouiKKjUxoiKZoju+Y7IZO+tUi/KX9lPRR/kXURExNhVUPzH+gtzupKuQShEWs5njJS13C/0yUm+nrWrFET9MeJCt+8UgyqZ9suW1vCACe+kJbZDBKYrMRKJYi8OMX368pl6HqSP+WTcrrfMXXk7o4S44EXffURnnyp3qVo2uPsC9v5qhjmNJ/BgLYgefxG69LUUZefY7Us46Gy3zShPM0cdcQxa2ft/IA8HIcUBxoKoV6F0u5PQtMWCWzCJgw1pg0iZOqQmM=

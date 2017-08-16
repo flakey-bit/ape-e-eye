@@ -1,0 +1,31 @@
+.swTabbedPanesWidget {
+    border: 2px solid #ccc;
+    border-bottom: none;
+}
+
+.swTabbedPanesWidgetTabPane {
+    overflow: hidden;
+    transition: height 1s ease;
+}
+
+.swTabbedPanesWidget .swTabbedPanesWidgetTabPane:not(:first-child) {
+    border-bottom: 2px solid #ccc;
+}
+
+.swTabbedPanesWidgetTabPaneActive {
+    border-bottom: 2px solid #ccc;
+}
+
+.swTabbedPanesWidgetTabPaneHeader {
+    background-color: #EEE;
+    padding: 5px;
+}
+
+.swTabbedPanesWidgetTabPaneHeader a:hover .swTabbedPanesWidgetTabPaneHeaderToggle {
+    text-shadow: 0px 0px 5px #bbff99;
+}
+
+
+.swTabbedPanesWidgetTabPaneHeader a {
+    text-decoration: none;
+}

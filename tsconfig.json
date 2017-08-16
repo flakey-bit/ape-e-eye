@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "watch": true,
+        "lib": [
+            "dom",
+            "es2015",
+            "scripthost",
+            "es2015.iterable"
+        ],
+        "target": "ES5"
+    },
+    "include": [
+        "node_modules/@types"
+    ]
+}

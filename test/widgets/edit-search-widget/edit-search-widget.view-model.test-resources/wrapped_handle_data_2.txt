@@ -1,0 +1,11 @@
+function handleData(data) {
+    var result = [];
+    for (var i=0; i<data.items.length; i++) {
+        var item = data.items[i];
+        if (item.someField % 2 == 0) {
+            result.push[item.value];
+        }
+    }
+
+    return result.join();
+}

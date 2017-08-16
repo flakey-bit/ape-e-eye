@@ -1,0 +1,6 @@
+<div class="swTabbedPanesWidgetTabPaneHeader" ng-class="{swTabbedPanesWidgetTabPaneActive:$ctrl.selected}">
+    <a href="" ng-click="$ctrl.select()"><i class="swTabbedPanesWidgetTabPaneHeaderToggle fa" ng-class="$ctrl.selected? 'fa-minus-square-o' : 'fa-plus-square-o' " fa-plus-square-o" aria-hidden="true"></i> {{title}}</a>
+</div>
+<div class="swTabbedPanesWidgetTabPane">
+    <div class="swTabbedPanesWidgetTabPaneContent" ng-transclude></div>
+</div>

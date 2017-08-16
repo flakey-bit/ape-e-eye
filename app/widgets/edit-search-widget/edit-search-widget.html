@@ -1,0 +1,63 @@
+<div class="swEditSearchWidget">
+    <form name="editSearchWidgetForm" ng-submit="$ctrl.onSaveClick()">
+    <tabbed-pane-widget>
+        <tabbed-pane-widget-pane title="Basic details">
+            <div class="swEditSearchWidgetBasicDetails">
+                <p>
+                <label>
+                    Friendly Name:
+                    <input type="text" ng-model="$ctrl.viewModel.friendlyName" name="friendlyDesc" required minlength="3">
+                </label>
+                </p>
+                <p>
+                <label>
+                    URL:
+                    <input type="url" size="60" ng-model="$ctrl.viewModel.url" name="url" required>
+                </label>
+                </p>
+                <p>
+                <div>
+                    <input type="checkbox" id="swESWomitDefaultTransforms" name="swESWomitDefaultTransforms" ng-model="$ctrl.viewModel.omitDefaultTransforms">
+                    <label for="swESWomitDefaultTransforms">Omit default transforms:</label>
+                </div>
+                </p>
+                <p>
+                <div>
+                    <input type="checkbox" id="swESWisJsonP" name="swESWisJsonP" ng-model="$ctrl.viewModel.isJsonP">
+                    <label for="swESWisJsonP">JSON-P request:</label>
+                </div>
+                </p>
+                <p>
+                <label class="swEditSearchWidgetOptional" ng-class="{'swEditSearchWidgetOptionalVisible': $ctrl.viewModel.isJsonP}">
+                    JSON-P parameter name:
+                    <input type="text" ng-model="$ctrl.viewModel.jsonpCallbackParamName" ng-required="$ctrl.viewModel.isJsonP" ng-disabled="!$ctrl.viewModel.isJsonP" name="jsonpCallbackParamName" pattern="[a-zA-Z]+[a-zA-Z0-9_]*">
+                </label>
+                </p>
+            </div>
+    </tabbed-pane-widget-pane>
+    <tabbed-pane-widget-pane title="Function definition">
+        <div class='swESWCodeMirror'>
+            <ui-codemirror ng-model="$ctrl.viewModel.handleData" ng-model-options="{ debounce: 1000 }" ui-validate="{handleDataFunction: '$ctrl.viewModel.validateHandleData($value)'}" ui-codemirror-opts="$ctrl.editorOptions" name="handleData" required></ui-codemirror>
+        </div>
+    </tabbed-pane-widget-pane>
+    </tabbed-pane-widget>
+    <validation-errors visible="!editSearchWidgetForm.$valid">
+        <ul>
+            <li ng-show='editSearchWidgetForm.friendlyDesc.$error.required'>Friendly name must be specified</li>
+            <li ng-show='editSearchWidgetForm.friendlyDesc.$error.minlength'>Friendly name must be at least three characters long</li>
+            <li ng-show='editSearchWidgetForm.url.$error.required'>A URL for requests must be provided</li>
+            <li ng-show='editSearchWidgetForm.url.$error.url'>The specified URL is not valid (it should begin with <span style="color: green">http://</span> or <span style="color: green">https://</span>) </li>
+            <li ng-show='editSearchWidgetForm.jsonpCallbackParamName.$error.required'>A JSON-P callback parameter name must be provided if the request type is JSON-P</li>
+            <li ng-show='editSearchWidgetForm.jsonpCallbackParamName.$error.pattern'>The JSON-P callback parameter name does not match the expected pattern (it should begin with an uppercase or lowercase letter, optionally followed by one or more letters/numbers/underscores)</li>
+            <li ng-show='editSearchWidgetForm.handleData.$error.required'>A data handling function must be provided</li>
+            <li ng-show='editSearchWidgetForm.handleData.$error.handleDataFunction'>
+                The data handling function should conform to the template <div style="margin-left:5px">
+                <pre style="margin-bottom:0px">function handleData(data) {</pre>
+                <pre style="color: green; margin-top:0px; margin-bottom: 0px;">&nbsp; &nbsp; // Function body goes here</pre>
+                <pre style="margin-top:0px; margin-bottom: 0px;">}</pre>
+            </li>
+        </ul>
+    </validation-errors>
+    <div class="swEditSearchWidgetDialogButtons"><standard-button ng-disabled="!editSearchWidgetForm.$valid" type="submit">Save</standard-button><standard-button ng-click="$ctrl.onCancelClick()">Cancel</standard-button></div>
+    </form>
+</div>

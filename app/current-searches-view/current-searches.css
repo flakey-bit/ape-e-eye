@@ -1,0 +1,13 @@
+.swCSList {
+    list-style: none;
+    margin-top: 0px;
+    padding-left: 0px;
+    display: inline-flex;
+    flex-flow: row wrap;
+    margin-bottom: 0px;
+}
+
+.swSearchWidgetLi {
+	margin-right: 20px;
+	margin-bottom: 20px;
+}

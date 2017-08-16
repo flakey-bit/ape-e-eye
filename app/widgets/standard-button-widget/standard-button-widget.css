@@ -1,0 +1,56 @@
+standard-button  + standard-button {
+	margin-left: 5px;
+}
+
+button.swStandardButton {
+	background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+	background-color:#b8e356;
+	border:1px solid #83c41a;
+	text-shadow:0px 1px 0px #86ae47;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	border-radius:6px;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:5px 9px;
+	text-decoration:none;
+	outline-offset: 2px;
+	outline: none;
+}
+
+button.swStandardButton[type=submit] {
+	background:linear-gradient(to bottom, #ea6d12 5%, #ff7d1e 100%);
+	background-color:#ea6d12;
+	border:1px solid #dd6813;
+	text-shadow:0px 1px 0px #ce6010;
+	box-shadow:inset 0px 1px 0px 0px #d6ab8b;
+}
+
+button.swStandardButton:hover {
+	cursor: pointer;
+	background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+	background-color:#a5cc52;
+}
+
+button.swStandardButton[type=submit]:hover {
+	background:linear-gradient(to bottom, #ff7d1e 5%, #ea6d12 100%);
+	background-color:#ff7d1e;
+}
+
+button.swStandardButton:active {
+	position:relative;
+	top:2px;
+	border: none;
+}
+
+button.swStandardButton:disabled, button.swStandardButton[type=submit]:disabled {
+	background: lightgray;
+	color: darkgray;
+	border: none;
+	text-shadow: initial;
+	box-shadow: initial;
+	cursor:initial;
+	top: 0px;
+}

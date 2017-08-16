@@ -1,0 +1,29 @@
+<div class='swSearchGroupWidget'>
+    <form name="searchGroupWidgetForm">
+
+    <h2 class="swSearchGroupWidgetHeading">{{$ctrl.searchGroup.baseUrl}}</h2>
+
+    <p>
+        <label>
+            Minimum period (between searches):
+            <input type="number" min="5" max="3600" required ng-model-options="{ debounce: 500 }" ng-model="$ctrl.searchGroup.minimumPeriod" ng-change="$ctrl.invokeSearchGroupUpdatedCallback()" name="minPeriod" />
+        </label>
+    </p>
+
+    <p>
+        <h4>Searches:</h4>
+        <ol class="swSearchGroupWidgetSearchesList">
+            <li ng-repeat="search in $ctrl.searchGroup.searches">
+                {{search.friendlyName}}
+            </li>
+        </ol>
+    </p>
+        <validation-errors visible="!searchGroupWidgetForm.$valid">
+        <ul>
+            <li ng-show='searchGroupWidgetForm.minPeriod.$error.required'>Minimum period must be specified</li>
+            <li ng-show='searchGroupWidgetForm.minPeriod.$error.min'>The minimum period must be at least 5 seconds</li>
+            <li ng-show='searchGroupWidgetForm.minPeriod.$error.max'>The minimum period can be at most 3600 seconds</li>
+        </ul>
+    </validation-errors>
+    </form>
+</div>

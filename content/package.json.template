@@ -1,0 +1,11 @@
+{
+  "name": "ape-e-eye",
+  "version": "1.0.0",
+  "description": "Ape E Eye",
+  "scripts": {
+    "start": "harp server --port $PORT"
+  },
+  "dependencies": {
+    "harp": "*"
+  }
+}

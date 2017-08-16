@@ -1,0 +1,12 @@
+<ul class='swCSList'>
+    <li ng-repeat="search in $ctrl.searches" class='swSearchWidgetLi'>
+        <searchwidget search="search" search-view-controller="$ctrl" />
+    </li>
+</ul>
+
+<standard-button ng-click="$ctrl.onAddButtonClicked();"><i class="fa fa-plus" aria-hidden="true"></i></standard-button>
+
+<standard-button ng-click="$ctrl.toggleSearchExecutor();">
+    <i class="fa fa-pause" aria-hidden="true" ng-if="$ctrl.executorIsRunning"></i>
+    <i class="fa fa-play" aria-hidden="true" ng-if="!$ctrl.executorIsRunning"></i>
+</standard-button>
