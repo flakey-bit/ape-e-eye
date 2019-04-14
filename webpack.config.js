@@ -7,7 +7,7 @@ module.exports = {
     "mode": "development",
     devtool: 'source-map',
     entry: {
-        app: './app/app.js'
+        app: './ng-app/main.ts'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -22,7 +22,7 @@ module.exports = {
             'app-root': path.resolve(__dirname, './app'),
             'static-content': path.resolve(__dirname, './content'),
             'widgets': path.resolve(__dirname, './app/widgets')
-        },
+    },
         modules: [
             "node_modules"
         ]
@@ -52,6 +52,12 @@ module.exports = {
             {
                 test: /\.txt$/,
                 loader: 'raw-loader'
+            },
+            {
+                test: /\.tsx?/,
+                exclude: [/node_modules/, /\.(spec|e2e)\.ts$/],
+                include: path.resolve(__dirname, 'ng-app'),
+                loader: ['ts-loader', 'angular2-template-loader']
             },
             {
                 test: /\.tsx?$/,
