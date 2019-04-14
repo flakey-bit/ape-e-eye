@@ -1,25 +1,19 @@
 "use strict";
 
 var path = require('path');
-var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    "mode": "development",
     devtool: 'source-map',
     entry: {
-        vendor: ['angular', 'angular-animate', 'angular-route', 'moment', './vendor/ui-codemirror-0.3.0', 'angular-ui-validate', 'angular-toastr'],
         app: './app/app.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
             inject: 'head',
             title: 'Search Watcher',
-            template: './app/viewport/index.html'}),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vendor",
-            filename: "vendor.js",
-            minChunks: Infinity
-        })
+            template: './app/viewport/index.html'})
     ],
 
     resolve: {
@@ -28,11 +22,14 @@ module.exports = {
             'app-root': path.resolve(__dirname, './app'),
             'static-content': path.resolve(__dirname, './content'),
             'widgets': path.resolve(__dirname, './app/widgets')
-        }
+        },
+        modules: [
+            "node_modules"
+        ]
     },
 
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.html$/,
                 loader: "html-loader"
@@ -58,6 +55,7 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
+                exclude: [/node_modules/, /\.(spec|e2e)\.ts$/],
                 loader: "ts-loader"
             },
             {

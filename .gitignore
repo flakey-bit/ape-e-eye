@@ -2,3 +2,4 @@ node_modules
 coverage
 ape-e-eye
 .vscode
+/package-lock.json
