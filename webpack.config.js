@@ -1,5 +1,7 @@
 "use strict";
 
+var AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -13,7 +15,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: 'head',
             title: 'Search Watcher',
-            template: './app/viewport/index.html'})
+            template: './app/viewport/index.html'}),
+        new AngularCompilerPlugin({
+            tsConfigPath: './tsconfig.json',
+            sourceMap: true
+            })
     ],
 
     resolve: {
@@ -57,7 +63,7 @@ module.exports = {
                 test: /\.tsx?/,
                 exclude: [/node_modules/, /\.(spec|e2e)\.ts$/],
                 include: path.resolve(__dirname, 'ng-app'),
-                loader: ['ts-loader', 'angular2-template-loader']
+                loader: ['@ngtools/webpack']
             },
             {
                 test: /\.tsx?$/,

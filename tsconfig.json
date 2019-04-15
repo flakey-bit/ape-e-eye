@@ -1,12 +1,15 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "removeComments": false,
         "preserveConstEnums": true,
         "sourceMap": true,
         "allowJs": true,
         "watch": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "skipLibCheck": true,
         "lib": [
             "dom",
             "es2015",
@@ -15,7 +18,7 @@
         ],
         "target": "ES5"
     },
-    "include": [
-        "node_modules/@types"
-    ]
+    "angularCompilerOptions": {
+        "entryModule": "./ng-app/app.module#AppModule"
+    }
 }
